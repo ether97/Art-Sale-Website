@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Liquid Luck",
+    "artist": "Pawel Czerwinski",
+    "price": 510,
+    "imgURL": "/public/liquidluck.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Spray Paint",
+    "artist": "Jr Korpa",
+    "price": 950,
+    "imgURL": "/public/spraypaint.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Multiverse",
+    "artist": "Sebastian Svenson",
+    "price": 420,
+    "imgURL": "/public/multiverse.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Rainfall",
+    "artist": "Christopher Burns",
+    "price": 570,
+    "imgURL": "/public/rainfall.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Depression",
+    "artist": "Mateusz Zukowski",
+    "price": 999,
+    "imgURL": "/public/depression.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Happiness",
+    "artist": "Milad Fakurian",
+    "price": 555,
+    "imgURL": "/public/happiness.jpg"
+  }
+]
