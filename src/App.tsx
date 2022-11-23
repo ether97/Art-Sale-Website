@@ -9,7 +9,7 @@ import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 function App() {
   return (
     <ShoppingCartProvider>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store />} />

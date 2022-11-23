@@ -15,13 +15,15 @@ export function DisplayItem({
   imgURL,
 }: DisplayItemProps) {
   return (
-    <Card style={{}}>
+    <Card style={{ background: "transparent" }}>
       <Card.Img
         style={{
           position: "relative",
           height: "200px",
           width: "300px",
           objectFit: "cover",
+          margin: "20px",
+          borderRadius: "5px",
         }}
         variant="top"
         src={imgURL}
@@ -30,8 +32,8 @@ export function DisplayItem({
         style={{
           fontFamily: "Sono, sans-serif",
           position: "absolute",
-          bottom: 0,
-          right: 0,
+          bottom: 20,
+          right: 20,
         }}
       >
         <Card.Title

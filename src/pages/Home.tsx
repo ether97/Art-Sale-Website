@@ -1,16 +1,14 @@
 import type * as CSS from "csstype";
-import { DisplayItem } from "../components/DisplayItem";
-import displayItems from "../data/items.json";
-import { Button } from "react-bootstrap";
-import { HiOutlineArrowSmRight, HiOutlineArrowSmLeft } from "react-icons/hi";
-import { useState } from "react";
+import { Slideshow } from "../components/Slideshow";
+import { WeirdHeader } from "../components/WeirdHeader";
+import items from "../data/items.json";
 
 const homeImg: CSS.Properties = {
   backgroundImage: "url('abstract.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "bottom",
   backgroundRepeat: "no-repeat",
-  height: "70vh",
+  height: "100vh",
   width: "100%",
   transform: "rotate(180deg)",
   display: "flex",
@@ -20,10 +18,9 @@ const homeImg: CSS.Properties = {
 };
 
 const homeContainer: CSS.Properties = {
-  height: "100vh",
-  width: "100vw",
+  width: "100%",
   display: "flex",
-  //   alignItems: "center",
+  flexDirection: "column",
 };
 
 const h1: CSS.Properties = {
@@ -55,23 +52,6 @@ const infoContainer: CSS.Properties = {
 };
 
 export function Home() {
-  const [array, setArray] = useState([1, 2, 3]);
-
-  const handleAdd = () => {
-    if (array[array.length - 1] === 6) {
-      setArray([1, 2, 3]);
-    } else {
-      setArray(array.map((item) => item + 1));
-    }
-  };
-
-  const handleSubtract = () => {
-    if (array[0] === 1) {
-      setArray([4, 5, 6]);
-    } else {
-      setArray(array.map((item) => item - 1));
-    }
-  };
   return (
     <div style={homeContainer}>
       <div style={homeImg}>
@@ -83,37 +63,22 @@ export function Home() {
       </div>
       <div
         style={{
-          position: "absolute",
-          display: "flex",
           width: "100%",
-          gap: "10px",
-          left: 0,
-          right: 0,
-          marginLeft: "auto",
-          marginRight: "auto",
-          alignItems: "center",
-          justifyContent: "center",
-          columnGap: "100px",
-          top: "600px",
-          transition: "1s ease",
+          height: "30vh",
+          position: "relative",
         }}
       >
-        <Button
-          onClick={handleSubtract}
-          variant="none"
-          style={{ border: "none" }}
-        >
-          <HiOutlineArrowSmLeft style={{ scale: "2" }} />
-        </Button>
-        {displayItems.map((item) => {
-          if (array.includes(item.id)) {
-            return <DisplayItem {...item} />;
-          }
-        })}
-        <Button onClick={handleAdd} variant="none" style={{ border: "none" }}>
-          <HiOutlineArrowSmRight style={{ scale: "2" }} />
-        </Button>
+        {items.map((item) => (
+          <WeirdHeader name={item.name} id={item.id} key={item.id} />
+        ))}
       </div>
+      <Slideshow />
+      <div
+        style={{
+          width: "100%",
+          height: "30vh",
+        }}
+      ></div>
     </div>
   );
 }
